@@ -1,0 +1,3 @@
+add_subdirectory(LexerDemo)
+add_subdirectory(ParserDemo)
+add_subdirectory(SemanticDemo)

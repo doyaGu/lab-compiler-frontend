@@ -1,0 +1,60 @@
+{
+    "files.defaultLanguage": "c",
+
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -fdiagnostics-color=auto -std=c11 && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -fdiagnostics-color=auto -std=c++17 && $dir$fileNameWithoutExt"
+    },
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.preserveFocus": false,
+    "code-runner.clearPreviousOutput": false,
+
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.dimInactiveRegions": false,
+
+    "editor.formatOnType": true,
+    "editor.snippetSuggestions": "top",
+
+    "clang.executable": "C:\\SDKs\\LLVM\\bin\\clang.exe",
+    "clang.cflags": [
+        "--target=x86_64-w64-mingw",
+        "-std=c11",
+        "-Wall"
+    ],
+    "clang.cxxflags": [
+        "--target=x86_64-w64-mingw",
+        "-std=c++17",
+        "-Wall"
+    ],
+    "clang.completion.enable": false,
+
+    "svg.preview.background": "white",
+    "files.associations": {
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "hash_map": "c",
+        "hash_set": "c",
+        "initializer_list": "c",
+        "regex": "c",
+        "utility": "c",
+        "*.ipp": "c",
+        "stdio.h": "c",
+        "LCD.C": "cpp",
+        "strstream": "c",
+        "deque": "c",
+        "list": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "unordered_set": "c",
+        "vector": "c",
+        "memory_resource": "c",
+        "optional": "c",
+        "functional": "c",
+        "iosfwd": "c",
+        "*.def": "c"
+    }
+}
