@@ -71,14 +71,14 @@ namespace parser {
     }
 
     STATE_DEFINE(Parser, Ready) {
-        logger->debug("Ready to parse.");
+//        logger->debug("Ready to parse.");
         stack_.push(0);
         symbols_.push(std::make_shared<GrammarSymbol>());
         nextGrammarSymbol();
     }
 
     STATE_DEFINE(Parser, Start) {
-        logger->debug("Start to parse.");
+//        logger->debug("Start to parse.");
 
         auto id = stack_.top();
         auto type = grammar_symbol_->getType();
@@ -111,11 +111,11 @@ namespace parser {
     }
 
     STATE_DEFINE(Parser, Success) {
-        logger->debug("Success to parse: {}", symbols_.top()->toString());
+        logger->debug("{} {}: {}", symbols_.top()->getLocation().toString(), action_.toString(), symbols_.top()->toString());
     }
 
     STATE_DEFINE(Parser, Failed) {
-        logger->error("Failed to parse: {}", table_.getError(action_.target));
+        logger->error("{} {}", symbols_.top()->getLocation().toString(), table_.getError(action_.target));
     }
 
     STATE_DEFINE(Parser, Completed) {

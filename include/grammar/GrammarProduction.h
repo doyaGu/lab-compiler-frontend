@@ -20,10 +20,6 @@ namespace grammar {
 
         [[nodiscard]] bool match(const std::vector<GrammarSymbolPtr> &symbols) const;
 
-        [[nodiscard]] SymbolType getHead() const;
-
-        [[nodiscard]] const std::vector<SymbolType> &getBody() const;
-
         [[nodiscard]] int getBodySize() const;
 
         [[nodiscard]] const std::string &getDescription() const;

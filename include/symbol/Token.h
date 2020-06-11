@@ -27,9 +27,13 @@ namespace symbol {
 
         bool operator!=(const Token &rhs) const;
 
-        void setLexeme(std::string_view lexeme);
+        [[nodiscard]] const SymbolLocation &getLocation() const;
 
         [[nodiscard]] std::string getLexeme() const;
+
+        void setLocation(const SymbolLocation &location);
+
+        void setLexeme(std::string_view lexeme);
 
         [[nodiscard]] std::string toString() const override;
 

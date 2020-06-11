@@ -83,11 +83,11 @@ namespace lexer {
     }
 
     STATE_DEFINE(Lexer, Ready) {
-        logger->debug("Ready to scan.");
+//        logger->debug("Ready to scan.");
     }
 
     STATE_DEFINE(Lexer, Start) {
-        logger->debug("Start to scan.");
+//        logger->debug("Start to scan.");
 
         nextChar();
         preprocess();
@@ -108,11 +108,11 @@ namespace lexer {
     }
 
     STATE_DEFINE(Lexer, Success) {
-        logger->debug("{} Success to scan: {}", location_.toString(), token_.toString());
+        logger->debug("{} Get Token: {}", location_.toString(), token_.toString());
     }
 
     STATE_DEFINE(Lexer, Failed) {
-        logger->error(" {} Failed to scan: {}", location_.toString(), lexeme_);
+        logger->error(" {} Unknown Token: {}", location_.toString(), lexeme_);
         newToken(SymbolType::UNKNOWN, location_, lexeme_);
     }
 

@@ -26,14 +26,6 @@ namespace grammar {
         return iter == body_.cend();
     }
 
-    SymbolType GrammarProduction::getHead() const {
-        return head_;
-    }
-
-    const std::vector<SymbolType> &GrammarProduction::getBody() const {
-        return body_;
-    }
-
     int GrammarProduction::getBodySize() const {
         return body_.size();
     }
@@ -43,14 +35,13 @@ namespace grammar {
     }
 
     GrammarSymbolPtr GrammarProduction::reduce(std::vector<GrammarSymbolPtr> symbols) {
-        auto head = std::make_shared<GrammarSymbol>(head_);
-        for (auto &symbol : symbols) {
+        auto head = std::make_shared<GrammarSymbol>(head_, 0, symbols.front()->getLocation(), nullptr, symbols);
+        for (auto &symbol : head->getSymbols()) {
             symbol->setHead(head);
         }
 
-        action_(head, symbols);
+        action_(head, head->getSymbols());
 
-        head->setSymbols(std::move(symbols));
         return head;
     }
 }

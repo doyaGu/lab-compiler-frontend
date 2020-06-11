@@ -15,12 +15,20 @@ namespace symbol {
         return !(rhs == *this);
     }
 
-    void Token::setLexeme(std::string_view lexeme) {
-        lexeme_ = std::string(lexeme);
+    const SymbolLocation &Token::getLocation() const {
+        return location_;
     }
 
     std::string Token::getLexeme() const {
         return lexeme_;
+    }
+
+    void Token::setLocation(const SymbolLocation &location) {
+        location_ = location;
+    }
+
+    void Token::setLexeme(std::string_view lexeme) {
+        lexeme_ = std::string(lexeme);
     }
 
     std::string Token::toString() const {

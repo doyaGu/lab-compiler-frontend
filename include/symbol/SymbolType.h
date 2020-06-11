@@ -13,8 +13,8 @@ namespace symbol {
         ID = 0,         // 字母打头的字母数字串
 
         /* 字面量 Literals */
-        INT,            // 整型常数
-        REAL,           // 实型常数
+        INT,            // 整型常量
+        REAL,           // 实型常量
         CHAR,           // 字符型常量
         STRING,         // 字符串型常量
 

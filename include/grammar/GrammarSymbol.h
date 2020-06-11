@@ -14,13 +14,11 @@ namespace grammar {
 
     class GrammarSymbol : public Token {
     public:
-        GrammarSymbol() : GrammarSymbol(SymbolType::UNKNOWN, nullptr, nullptr, {}) {}
+        GrammarSymbol() : GrammarSymbol(SymbolType::UNKNOWN, nullptr, SymbolLocation(), nullptr, {}) {}
 
         explicit GrammarSymbol(Token token);
 
-        explicit GrammarSymbol(SymbolType type) : GrammarSymbol(type, nullptr, nullptr, {}) {}
-
-        GrammarSymbol(SymbolType type, SymbolValue value, GrammarSymbolPtr head, std::vector<GrammarSymbolPtr> symbols);
+        GrammarSymbol(SymbolType type, SymbolValue value, SymbolLocation location, GrammarSymbolPtr head, std::vector<GrammarSymbolPtr> symbols);
 
         bool operator==(const GrammarSymbol &rhs) const;
 
